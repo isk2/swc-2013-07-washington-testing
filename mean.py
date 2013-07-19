@@ -14,9 +14,12 @@ def mean(numlist):
     """
     try :
         total = sum(numlist)
-        length = len(numlist)
+        length = 1.0*len(numlist)
+        retmean = total/length
     except TypeError :
         raise TypeError("The list was not numbers.")
+    except ZeroDivisionError : 
+        raise ZeroDivisionError("The list is empty")
     except :
         print "Something unknown happened with the list."
-    return total/length
+    return retmean
